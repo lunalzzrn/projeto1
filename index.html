@@ -1,26 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Escolar | Robótica e Física</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <header>
-    <h1>Confere aí</h1>
-    <nav>
-      <a href="#">Início</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Descubra a verdade passando o mouse</h2>
-    <article>
-      <div>
-        <div>
-          <img src="images.jpeg" alt="Coelho">
-          <p>Pinguins conseguem voar como pássaros!</p>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Colégio <span>Estadual de Marmeleiro</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#robotica">Robótica</a></li>
+                    <li><a href="#fisica">Física e Tecnociência</a></li>
+                </ul>
+            </nav>
         </div>
-        <div>
-          <img src="images.jpeg" alt="Coelho">
-          <p>Pinguins não voam, mas são excelentes nadadores.</p>
+    </header>
+
+    <section id="inicio">
+        <h2 class="section-title">Relatório de Atividades</h2>
+        <div class="content-text">
+            <p>Bem-vindo ao nosso portfólio digital! Este espaço foi cuidadosamente desenvolvido para documentar e compartilhar a nossa jornada de aprendizado, destacando as atividades, os experimentos e os projetos práticos realizados ao longo do ano letivo nas disciplinas de Robótica e Física e Tecnociência.</p>
+            <br>
+            <p>Nosso principal objetivo é conectar a teoria à prática. Aqui, os conceitos estudados em sala de aula ganham vida por meio da prototipagem, da programação, da investigação científica e da resolução de problemas reais. Ao unir tecnologia, ciência e criatividade, buscamos não apenas consolidar o conhecimento técnico, mas também desenvolver habilidades essenciais como trabalho em equipe, pensamento crítico e inovação.</p>
+            <br>
+            <p>Navegue pelo site para explorar nossas criações, acompanhar a evolução de cada projeto e ver de perto como transformamos ideias e equações em soluções tecnológicas funcionais.</p>
         </div>
-      </div>
-    </article>
-  </main>
-  <footer>
-    <p>Projeto feito por Laura L</p>
-  </footer>
+    </section>
+
+    <hr style="border: 0; height: 1px; background: #e2e8f0; max-width: 1000px; margin: 0 auto;">
+
+    <section id="robotica">
+        <h2 class="section-title">Robótica</h2>
+        <div class="content-text">
+            <p>Nesta seção, compartilhamos nossa caminhada no aprendizado prático e na construção de conhecimentos básicos. Ao longo do curso, desenvolvemos projetos simples, mas de grande valor pedagógico, que nos permitiram dar os primeiros passos na criação de sistemas automatizados e na lógica de códigos. Durante esse processo, aprendemos muito sobre os conceitos essenciais da robótica e os princípios fundamentais da programação. Cada etapa nos ajudou a entender como transformamos linhas de código em ações no mundo físico, superando desafios iniciais e consolidando uma base sólida para projetos futuros.</p>
+        </div>
+
+        <div class="galeria">
+
+            <!-- Vídeo 1: Disco de Newton -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video src="videos/disco-de-newton.mp4" controls muted playsinline preload="metadata"></video>
+                </div>
+                <div class="video-info">
+                    <h3>Disco de Newton</h3>
+                    <div class="componentes">
+                        <span>Arduino Uno</span>
+                        <span>Motor</span>
+                        <span>Potenciômetro</span>
+                        <span>Disco colorido</span>
+                    </div>
+                    <p>Um disco com as cores giratório, ligado a um pequeno motor controlado pelo Arduino (não lembramos o nome exato do modelo do motor). A velocidade de rotação é ajustada em tempo real girando um potenciômetro, que envia um valor variável para uma entrada analógica da placa — quanto mais giramos, mais rápido o disco gira.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 2: Fade In -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video src="videos/fade-in-fade-out.mp4" controls muted playsinline preload="metadata"></video>
+                </div>
+                <div class="video-info">
+                    <h3>Fade In / Fade Out</h3>
+                    <div class="componentes">
+                        <span>Arduino Uno</span>
+                        <span>LED</span>
+                        <span>Resistor</span>
+                        <span>PWM (analogWrite)</span>
+                    </div>
+                    <p>Projeto que controla a velocidade com que a intensidade de um LED muda. No Fade In, o LED começa apagado e a luz vai aumentando aos poucos até acender por completo; no Fade Out acontece o contrário. Isso é feito programando a placa para variar aos poucos a potência enviada ao LED, em vez de simplesmente ligar ou desligar de uma vez.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 3: LED RGB -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video src="videos/led-rgb.mp4" controls muted playsinline preload="metadata"></video>
+                </div>
+                <div class="video-info">
+                    <h3>LED RGB</h3>
+                    <div class="componentes">
+                        <span>Arduino Uno</span>
+                        <span>LED RGB</span>
+                        <span>Potenciômetro</span>
+                        <span>Resistores</span>
+                    </div>
+                    <p>Um LED RGB que muda de cor conforme mexemos em um potenciômetro. Basicamente, a posição do potenciômetro é lida pelo Arduino e esse valor é usado para controlar a intensidade de cada uma das três cores do LED (vermelho, verde e azul), criando combinações diferentes de cor.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 4: Semáforo -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video src="videos/semaforo.mp4" controls muted playsinline preload="metadata"></video>
+                </div>
+                <div class="video-info">
+                    <h3>Semáforo</h3>
+                    <div class="componentes">
+                        <span>Arduino Uno</span>
+                        <span>LEDs (vermelho, amarelo, verde)</span>
+                        <span>Resistores</span>
+                        <span>Protoboard</span>
+                    </div>
+                    <p>Simulação de um semáforo de trânsito real, alternando entre as cores verde, amarela e vermelha em um tempo determinado no código. Cada LED fica aceso por um período programado antes de passar para a próxima cor, reproduzindo a lógica de um sinal de trânsito de verdade.</p>
+                </div>
+            </div>
+
+            <!-- Vídeo 5: Ciclo da Luz -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video src="videos/ciclo-da-luz.mp4" controls muted playsinline preload="metadata"></video>
+                </div>
+                <div class="video-info">
+                    <h3>Ciclo da Luz (Dia e Noite)</h3>
+                    <div class="componentes">
+                        <span>Arduino Uno</span>
+                        <span>LED RGB</span>
+                        <span>Resistor</span>
+                    </div>
+                    <p>Projeto que representa a passagem do tempo ao longo do dia usando um único LED RGB. Conforme o tempo passa, o LED muda de cor gradualmente — tons mais claros representando o dia e tons de azul representando a noite — e o sistema anuncia em voz qual período está sendo representado de acordo com a cor acesa.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr style="border: 0; height: 1px; background: #e2e8f0; max-width: 1000px; margin: 0 auto;">
+
+    <section id="fisica">
+        <h2 class="section-title">Física e Tecnociência</h2>
+        <div class="content-text">
+            <p>Nesta seção, aprofundamos nossa compreensão sobre as leis que regem o mundo ao nosso redor e descobrimos como a ciência e a tecnologia se conectam na prática. Aqui, documentamos os experimentos realizados em laboratório, analisando fenômenos físicos e testando teorias com o apoio da tecnociência. Além disso, utilizamos esse espaço para estudar e compreender a fundo a física por trás dos projetos que desenvolvemos em robótica. Cada protótipo que construímos serviu como um laboratório vivo, nos permitindo observar conceitos como movimento, força, energia e circuitos elétricos funcionando em tempo real.</p>
+        </div>
+
+        <div class="galeria">
+            <div class="media-placeholder">
+                <span>Imagem de Física 1</span>
+                [INSIRA O LINK DA SUA IMAGEM DE FÍSICA AQUI]
+                </div>
+
+            <div class="media-placeholder">
+                <span>Vídeo de Física 1</span>
+                [INSIRA O LINK DO SEU VÍDEO DE FÍSICA AQUI]
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Desenvolvido por:</strong></p>
+        <ul class="integrantes-lista">
+            <li>Artur Francisco Bariviera Tonial</li>
+            <li>Natalha Stein</li>
+            <li>Laura Lazzarini Dos Santos</li>
+            <li>Mariana Junges Castoldi</li>
+            <li>Bianca Maria Detoni Martins</li>
+        </ul>
+        <p>&copy; <span id="ano-atual"></span> - Trabalho Escolar. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Funcionalidade 1: Adicionar o ano atual automaticamente no rodapé
+        const anoAtual = new Date().getFullYear();
+        document.getElementById('ano-atual').textContent = anoAtual;
+
+        // Funcionalidade 2: Efeito simples de "Fade In" ao rolar a página
+    </script>
+
 </body>
+</html>

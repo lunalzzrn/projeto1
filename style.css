@@ -1,30 +1,279 @@
+/* =========================================
+   VARIÁVEIS DE CORES (PALETA AZUL)
+   ========================================= */
+:root {
+    --azul-escuro: #0f2c59; /* Elementos principais e cabeçalho */
+    --azul-claro: #3b82f6; /* Destaques e botões */
+    --azul-hover: #2563eb; /* Efeito hover */
+    --fundo: #f8fafc; /* Fundo cinza bem claro */
+    --texto-principal: #334155;
+    --texto-secundario: #64748b;
+    --branco: #ffffff;
+}
+
+/* =========================================
+   RESET E TIPOGRAFIA
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-.cabecalho {
-    padding: 15px 25px;
+body {
+    background-color: var(--fundo);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+header {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cartao {
-    width: 260px;
-    height: 200px;
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.cartao-imagem {
-    width: 100%;
+.logo span {
+    color: var(--azul-claro);
 }
 
-body {
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--azul-claro);
+}
+
+/* =========================================
+   ESTRUTURA DAS SEÇÕES
+   ========================================= */
+section {
+    padding: 100px 20px 60px; /* Padding top maior por causa do menu fixo */
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.section-title {
+    color: var(--azul-escuro);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--azul-claro);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.content-text {
+    text-align: justify;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   GALERIA (MÍDIAS) - usada na Robótica e na Física
+   ========================================= */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.media-placeholder {
+    background-color: #e2e8f0;
+    border: 2px dashed #94a3b8;
+    border-radius: 8px;
+    height: 250px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--texto-secundario);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-main {
-    flex: 1;
+.media-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.media-placeholder span {
+    font-weight: bold;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+/* Imagens reais e Iframes (Para quando você colocar os links) */
+.galeria img, .galeria iframe, .galeria video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   CARDS DE VÍDEO (ROBÓTICA)
+   Cada card tem o vídeo (16:9 responsivo) + descrição embaixo
+   ========================================= */
+.video-card {
+    background-color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    background-color: #0f2c59;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    object-fit: contain;
+    background-color: #000;
+}
+
+.video-info {
+    padding: 18px 20px 22px;
+}
+
+.video-info h3 {
+    color: var(--azul-escuro);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.componentes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.componentes span {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--azul-hover);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.video-info p {
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    text-align: left;
+}
+
+.aviso-audio {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    font-style: italic;
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.integrantes-lista {
+    list-style: none;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.integrantes-lista li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
